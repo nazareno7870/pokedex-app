@@ -1,0 +1,170 @@
+.btn {
+    border: none;
+    outline: none;
+    font-size: 12px;
+    padding: 4px 16px;
+    color: white;
+    border-radius: 10px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.grass {
+    background-color: #52e152;
+}
+
+.grass:hover {
+    background-color: #76ee76;
+}
+
+.normal {
+    background-color: #bb7f25;
+}
+
+.normal:hover {
+    background-color: #d5a45a;
+}
+
+.fighting {
+    background-color: #bb5425;
+}
+
+.fighting:hover {
+    background-color: #ee763f;
+}
+
+.flying {
+    background-color: #a2a2a2;
+}
+
+.flying:hover {
+    background-color: #808080;
+}
+
+.poison {
+    background-color: #87217b;
+}
+
+.poison:hover {
+    background-color: #b53ea7;
+}
+
+.ground {
+    background-color: #523419;
+}
+
+.ground:hover {
+    background-color: #8a5b32;
+}
+
+.rock {
+    background-color: #3f3f3f;
+}
+
+.rock:hover {
+    background-color: #919191;
+}
+
+.bug {
+    background-color: #7b9b23;
+}
+
+.bug:hover {
+    background-color: #a3c741;
+}
+
+.ghost {
+    background-color: #56187b;
+}
+
+.ghost:hover {
+    background-color: #7a35a2;
+}
+
+.steel {
+    background-color: #55697e;
+}
+
+.steel:hover {
+    background-color: #6f87a0;
+}
+
+.fire {
+    background-color: #ac2000;
+}
+
+.fire:hover {
+    background-color: #c74a2e;
+}
+
+.water {
+    background-color: #2e70c7;
+}
+
+.water:hover {
+    background-color: #5592e2;
+}
+
+.electric {
+    background-color: #ffde21;
+}
+
+.electric:hover {
+    background-color: #ffe658;
+}
+
+.psychic {
+    background-color: #dd4648;
+}
+
+.psychic:hover {
+    background-color: #dc787a;
+}
+
+.ice {
+    background-color: #588db1;
+}
+
+.ice:hover {
+    background-color: #79a2bd;
+}
+
+.dragon {
+    background-color: #695280;
+}
+
+.dragon:hover {
+    background-color: #886fa1;
+}
+
+.dark {
+    background-color: #262626;
+}
+
+.dark:hover {
+    background-color: #615f5f;
+}
+
+.fairy {
+    background-color: #bf2587;
+}
+
+.fairy:hover {
+    background-color: #dc4aa6;
+}
+
+.unknown {
+    background-color: #2bb579;
+}
+
+.unknown:hover {
+    background-color: #54dca1;
+}
+
+.shadow {
+    background-color: #616161;
+}
+
+.shadow:hover {
+    background-color: #918a8a;
+}
