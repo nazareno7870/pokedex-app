@@ -114,3 +114,17 @@
     flex-direction: column;
   }
 }
+.topTitle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title{
+  font-family: Pokemon;
+  letter-spacing: 4px;
+  margin: 0;
+  margin-left: 10px;
+  text-shadow: 1px 1px 2px black;
+  color: #ffeb3b;
+  font-size: 36px;
+}
