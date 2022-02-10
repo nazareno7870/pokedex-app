@@ -1,26 +1,34 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 @font-face {
-  font-family: Pokemon;
-  src: url('/PokemonSolid.ttf');
+    font-family: Pokemon;
+    src: url('/PokemonSolid.ttf');
 }
 
+@font-face {
+    font-family: Monserrat-Bold;
+    src: url('/Montserrat-Bold.ttf');
+}
 
-.nextui-image-container{
-  margin: 0;
+@font-face {
+    font-family: Monserrat-Regular;
+    src: url('/Montserrat-Regular.ttf');
+}
+
+.nextui-image-container {
+    margin: 0;
 }
