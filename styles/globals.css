@@ -32,3 +32,83 @@ a {
 .nextui-image-container {
     margin: 0;
 }
+
+.grass {
+    background-color: #66da66;
+}
+
+.normal {
+    background-color: #bb7f25;
+}
+
+.fighting {
+    background-color: #bb5425;
+}
+
+.flying {
+    background-color: #a2a2a2;
+}
+
+.poison {
+    background-color: #87217b;
+}
+
+.ground {
+    background-color: #523419;
+}
+
+.rock {
+    background-color: #3f3f3f;
+}
+
+.bug {
+    background-color: #7b9b23;
+}
+
+.ghost {
+    background-color: #56187b;
+}
+
+.steel {
+    background-color: #55697e;
+}
+
+.fire {
+    background-color: #ac2000;
+}
+
+.water {
+    background-color: #2e70c7;
+}
+
+.electric {
+    background-color: #ffde21;
+}
+
+.psychic {
+    background-color: #dd4648;
+}
+
+.ice {
+    background-color: #588db1;
+}
+
+.dragon {
+    background-color: #695280;
+}
+
+.dark {
+    background-color: #262626;
+}
+
+.fairy {
+    background-color: #bf2587;
+}
+
+.unknown {
+    background-color: #2bb579;
+}
+
+.shadow {
+    background-color: #616161;
+}

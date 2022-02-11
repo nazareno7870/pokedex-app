@@ -9,6 +9,10 @@ const PokemonCard = ({ name, url }) => {
     const [isVisible, setisVisible] = useState(false);
     const pokemon = useGetPokemonData({ url })
     const imgurl = !!pokemon?.sprites?.other?.dream_world.front_default ? pokemon?.sprites?.other.dream_world.front_default : pokemon?.sprites?.other['official-artwork'].front_default
+    const [showRight, setshowRight] = useState(false);
+    const [showLeft, setshowLeft] = useState(false);
+    const [positionCard, setpositionCard] = useState('0px');
+    const [touchStart, settouchStart] = useState(0);
 
     const handleObserv = e => {
         if (e[0].isIntersecting) {
@@ -27,42 +31,123 @@ const PokemonCard = ({ name, url }) => {
         observer.observe(pokeRef.current);
     }, [])
 
+    const slideLeft = () => {
+        setpositionCard('-240px')
+        setshowRight(true)
+    }
+
+    const returnLeft = () => {
+        setpositionCard('0px')
+        setshowRight(false)
+    }
+
+    const slideRight = () => {
+        setpositionCard('240px')
+        setshowLeft(true)
+    }
+
+    const returnRight = () => {
+        setpositionCard('0px')
+        setshowLeft(false)
+    }
+
+    const handleStats = () => {
+        if(positionCard === '0px'){
+            slideLeft()
+        }else{
+            returnLeft()
+        }
+
+    }
+
+    const handleSlide = (e) => {
+        if (touchStart - e.changedTouches[0].clientX >= 60 && !showLeft) {
+            slideLeft()
+        } else if (e.changedTouches[0].clientX - touchStart >= 60 && showRight) {
+            returnLeft()
+        } else if (e.changedTouches[0].clientX - touchStart >= 60 && !showRight) {
+            slideRight()
+        } else if (touchStart - e.changedTouches[0].clientX >= 60 && showLeft) {
+            returnRight()
+        }
+    }
+
     return (
-        <div ref={pokeRef} className={styles.pokemonCard} style={{ backgroundImage: !!pokemon?.types ? `url('/bg-${pokemon?.types[0].type?.name}.png')` : "url('/bg.png')" }}>
-            <div className={styles.pokemonid}>
-                <h4 className={styles.pokemon_id_h4}>{pokemon?.id}</h4>
+
+        <div className={`${!!pokemon.types && pokemon?.types[0].type?.name} ${styles.bgCard}`}>
+
+            <div className={styles.stats} >
+                {pokemon?.stats?.map(s => {
+                    return (
+                        <div key={s.stat.name} className={styles.linestat}>
+
+                            <Image
+                                className={styles.icon}
+                                src={`/stats/${s.stat.name}.png`}
+                                alt={s.stat.name}
+                                width={20}
+                                height={20}
+                            />
+
+                            <p className={styles.stat} >
+                                {s.stat.name}: {s.base_stat}
+                            </p>
+
+                        </div>
+                    )
+                })}
             </div>
-            {
-                !!imgurl
-                    ? <div className={styles.imagePokemon} style={{ bottom: isVisible ? '70px' : '20px' }} >
-                        <Image
-                            src={imgurl}
-                            alt={name}
-                            width={180}
-                            height={180} />
+
+            <div onTouchEnd={handleSlide} onTouchStart={e => settouchStart(e.touches[0].clientX)} ref={pokeRef} className={styles.pokemonCard} style={{ left: positionCard, backgroundImage: !!pokemon?.types ? `url('/bg-${pokemon?.types[0].type?.name}.png')` : "url('/bg.png')" }}>
+                <div className={styles.pokemonid}>
+                    <h4 className={styles.pokemon_id_h4}>{pokemon?.id}</h4>
+                </div>
+                {
+                    !!imgurl
+                        ? <div className={styles.imagePokemon} style={{ bottom: isVisible ? '70px' : '20px' }} >
+                            <Image
+                                src={imgurl}
+                                alt={name}
+                                width={180}
+                                height={180}
+                            />
+
+                        </div>
+                        : <></>
+
+                }
+
+
+                <div className={styles.type}>
+                    <h3 className={styles.name}>{name}</h3>
+                    <div className={styles.buttons}>
+                        {!!pokemon?.types
+                            ? pokemon.types.map(typ => {
+
+                                return (<Button key={typ.type.name} Type={typ.type.name} />)
+                            })
+                            : <></>
+                        }
 
                     </div>
-                    : <></>
-
-            }
-
-
-            <div className={styles.type}>
-                <h3 className={styles.name}>{name}</h3>
-                <div className={styles.buttons}>
-                    {!!pokemon?.types
-                        ? pokemon.types.map(typ => {
-
-                            return (<Button key={typ.type.name} Type={typ.type.name} />)
-                        })
-                        : <></>
-                    }
 
                 </div>
-
             </div>
+
+            <div className={styles.iconRight} onClick={handleStats}>
+                <Image
+                    className={styles.icon}
+                    src={`/statsicon.png`}
+                    alt={'Stats Icon'}
+                    width={32}
+                    height={32}
+                />
+            </div>
+            <div className={styles.iconLeft}></div>
+
         </div>
     );
+
 }
 
 export default PokemonCard;

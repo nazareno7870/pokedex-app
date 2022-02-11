@@ -1,6 +1,12 @@
 .container {
     padding: 0 1rem;
     margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    gap: 30px;
 }
 
 .main {
