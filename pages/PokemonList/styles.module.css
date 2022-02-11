@@ -13,6 +13,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     margin-top: 50px;
+    max-width: 450px;
 }
 
 .type {
