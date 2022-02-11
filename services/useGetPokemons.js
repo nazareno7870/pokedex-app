@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 const useGetPokemons = ({ page, limit }) => {
     const [pokemons, setpokemons] = useState([]);
 
-
     useEffect(() => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${(page-1)*limit}`)
             .then(res => setpokemons(res.data.results))
