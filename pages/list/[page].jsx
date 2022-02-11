@@ -1,17 +1,17 @@
 import { Pagination } from '@nextui-org/react';
 import { useState, useEffect } from 'react';
-import useGetPokemons from '../../services/useGetPokemons';
 import PokemonCard from './PokemonCard';
 import { useRouter } from 'next/router'
+import useGetGraphql from './../../services/useGetGraphql';
 
 const PokemonList = () => {
     const router = useRouter()
     const { page } = router.query
     const limit = 20
-    const pokemons = useGetPokemons({ page: page, limit: limit })
+    const pokemons = useGetGraphql({ page: page, limit: limit })
     const [pagination, setpagination] = useState(page);
     const pages = 45
-
+    console.log(page)
     const handlePage = (page) => {
         router.push(`/list/${page}`)
         window.scrollTo(0, 0)
@@ -28,12 +28,12 @@ const PokemonList = () => {
                 !!page
                     ? <>
 
-                        {pokemons.map(pok => {
+                        {pokemons?.map(pok => {
                             return (<PokemonCard
                                 name={pok.name}
-                                url={pok.url}
-                                id={pok.url.split('https://pokeapi.co/api/v2/pokemon/')[1].slice(0, -1)}
-                                key={pok.name} />)
+                                id={pok.id}
+                                key={pok.name}
+                                data={pok} />)
                         })}
 
                         <Pagination onChange={handlePage} loop color="secondary" total={pages} initialPage={parseInt(pagination)} />
@@ -41,12 +41,12 @@ const PokemonList = () => {
                     </>
                     : <>
 
-                        {pokemons.map(pok => {
+                        {pokemons?.map(pok => {
                             return (<PokemonCard
                                 name={pok.name}
-                                url={pok.url}
-                                id={pok.url.split('https://pokeapi.co/api/v2/pokemon/')[1].slice(0, -1)}
-                                key={pok.name} />)
+                                id={pok.id}
+                                key={pok.name}
+                                data={pok} />)
                         })}
 
                         <Pagination className='pagination' onChange={handlePage} loop color="secondary" total={pages} initialPage={1} />

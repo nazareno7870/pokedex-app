@@ -3,18 +3,16 @@ import { useEffect, useRef, useState } from 'react';
 import Button from '../../components/ButtonType/Button';
 import useGetPokemonData from '../../services/useGetPokemonData';
 import styles from './styles.module.css'
-import useGetGraphql from './../../services/useGetGraphql';
 
-const PokemonCard = ({ name, url, id }) => {
+const PokemonCard = ({ name, id, data }) => {
     const pokeRef = useRef()
     const [isVisible, setisVisible] = useState(false);
-    const pokemon = useGetPokemonData({ url })
+    const pokemon = useGetPokemonData({ id })
     const imgurl = !!pokemon?.sprites?.other?.dream_world.front_default ? pokemon?.sprites?.other.dream_world.front_default : pokemon?.sprites?.other['official-artwork'].front_default
     const [showRight, setshowRight] = useState(false);
     const [showLeft, setshowLeft] = useState(false);
     const [positionCard, setpositionCard] = useState('0px');
     const [touchStart, settouchStart] = useState(0);
-    const data = useGetGraphql({ id })
 
     const handleObserv = e => {
         if (e[0].isIntersecting) {
@@ -40,7 +38,9 @@ const PokemonCard = ({ name, url, id }) => {
 
     const returnLeft = () => {
         setpositionCard('0px')
+        setTimeout(() => {
         setshowRight(false)
+        }, 700);
     }
 
     const slideRight = () => {
@@ -50,7 +50,9 @@ const PokemonCard = ({ name, url, id }) => {
 
     const returnRight = () => {
         setpositionCard('0px')
+        setTimeout(() => {
         setshowLeft(false)
+        }, 800);
     }
 
     const handleStats = () => {
@@ -87,6 +89,7 @@ const PokemonCard = ({ name, url, id }) => {
 
             {!!showRight
                 && <div className={styles.stats} >
+                    <h2 className={styles.location}> BASE STATS</h2>
                     {pokemon?.stats?.map(s => {
                         return (
                             <div key={s.stat.name} className={styles.linestat}>
@@ -120,11 +123,11 @@ const PokemonCard = ({ name, url, id }) => {
                                 alt={'Stats Icon'}
                                 width={26}
                                 height={26}
-                            /> {data.pokemon_v2_pokemon[0].pokemon_v2_pokemonspecy.pokemon_v2_generation.pokemon_v2_region.name}</h2>
+                            /> {data.pokemon_v2_pokemonspecy.pokemon_v2_generation.pokemon_v2_region.name}</h2>
                             <div className={styles.listgames}>
 
 
-                                {data.pokemon_v2_pokemon[0].pokemon_v2_pokemongameindices.map(m => {
+                                {data.pokemon_v2_pokemongameindices.map(m => {
 
                                     return (<p className={`${styles.btn} ${m.pokemon_v2_version.name}`} key={m.pokemon_v2_version.name}>{m.pokemon_v2_version.name}</p>)
                                 }
