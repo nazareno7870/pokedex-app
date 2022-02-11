@@ -6,7 +6,7 @@ const useGetPokemonData = ({ url }) => {
     useEffect(() => {
         axios.get(`${url}`)
             .then(res => setpokemons(res.data))
-            .catch(console.log('Error en la consulta'))
+            .catch(e => console.log('Error en la consulta'))
     }, [url])
 
     return (pokemons);
