@@ -10,7 +10,7 @@ const PokemonList = () => {
     const limit = 20
     const pokemons = useGetPokemons({ page: page, limit: limit })
     const [pagination, setpagination] = useState(page);
-    const pages = parseInt(1126 / limit) + 1
+    const pages = 45
 
     const handlePage = (page) => {
         router.push(`/list/${page}`)
