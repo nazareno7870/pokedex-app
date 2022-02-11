@@ -5,13 +5,14 @@
     border-radius: 6px 6px 20px 20px;
     box-shadow: 1px 1px 4px black;
     position: relative;
-    height: 210px;
+    height: 320px;
     background-repeat: no-repeat;
     background-color: #fff;
     background-size: contain;
     width: 80%;
     max-width: 450px;
     transition: 1.3s;
+    z-index: 80;
 }
 
 .bgCard {
@@ -19,7 +20,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 180px;
+    height: 300px;
     margin-top: 80px;
     position: relative;
     border-radius: 10px;
@@ -96,18 +97,18 @@
 .stats {
     position: absolute;
     right: 30px;
-    width: 60%;
+    width: 66%;
     margin: auto;
     display: flex;
     height: 100%;
     padding: 10px 0;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
     font-family: ui-sans-serif;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap: 6px;
+    gap: 10px;
 }
 
 .stat {
@@ -138,4 +139,64 @@
     align-items: center;
     cursor: pointer;
     filter: drop-shadow(1px 1px 0px #000000d3);
+    z-index: 20;
+}
+
+.games {
+    position: absolute;
+    left: 30px;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    height: 100%;
+    padding: 10px 0;
+    font-weight: 600;
+    font-size: 16px;
+    flex-direction: column;
+    font-family: ui-sans-serif;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.location {
+    color: white;
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    filter: drop-shadow(1px 1px 0px #000000d3);
+}
+
+.listgames {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.btn {
+    margin: 0;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    box-shadow: inset 0px -1px 5px #00000059, 1px 1px 2px #0000006b;
+    text-transform: capitalize;
+    font-family: 'Oswald', sans-serif;
+    text-shadow: 1px 1px #00000061;
+}
+
+.iconLeft {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    filter: drop-shadow(1px 1px 0px #000000d3);
+    z-index: 20;
 }

@@ -11,7 +11,7 @@ const PokemonList = () => {
     const pokemons = useGetPokemons({ page: page, limit: limit })
     const [pagination, setpagination] = useState(page);
     const pages = 45
-    
+
     const handlePage = (page) => {
         router.push(`/list/${page}`)
         window.scrollTo(0, 0)
@@ -29,7 +29,11 @@ const PokemonList = () => {
                     ? <>
 
                         {pokemons.map(pok => {
-                            return (<PokemonCard  name={pok.name} url={pok.url} key={pok.name} />)
+                            return (<PokemonCard
+                                name={pok.name}
+                                url={pok.url}
+                                id={pok.url.split('https://pokeapi.co/api/v2/pokemon/')[1].slice(0, -1)}
+                                key={pok.name} />)
                         })}
 
                         <Pagination onChange={handlePage} loop color="secondary" total={pages} initialPage={parseInt(pagination)} />
@@ -38,7 +42,11 @@ const PokemonList = () => {
                     : <>
 
                         {pokemons.map(pok => {
-                            return (<PokemonCard name={pok.name} url={pok.url} key={pok.name} />)
+                            return (<PokemonCard
+                                name={pok.name}
+                                url={pok.url}
+                                id={pok.url.split('https://pokeapi.co/api/v2/pokemon/')[1].slice(0, -1)}
+                                key={pok.name} />)
                         })}
 
                         <Pagination className='pagination' onChange={handlePage} loop color="secondary" total={pages} initialPage={1} />

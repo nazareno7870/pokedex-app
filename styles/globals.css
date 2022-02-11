@@ -112,3 +112,178 @@ a {
 .shadow {
     background-color: #616161;
 }
+
+.red {
+    background-color: rgb(230, 90, 90);
+    color: #fff;
+}
+
+.blue {
+    background-color: rgb(87, 87, 233);
+    color: #fff;
+}
+
+.green {
+    background-color: rgb(94, 201, 94);
+    color: #fff;
+}
+
+.yellow {
+    background-color: rgb(245, 245, 72);
+    color: #fff;
+}
+
+.gold {
+    background-color: rgb(199, 199, 35);
+    color: #fff;
+}
+
+.silver {
+    background-color: rgb(143, 143, 143);
+    color: #fff;
+}
+
+.crystal {
+    background-color: #537382;
+    color: #fff;
+}
+
+.ruby {
+    background-color: rgb(124, 43, 43);
+    color: #fff;
+}
+
+.sapphire {
+    background-color: rgb(43, 43, 135);
+    color: #fff;
+}
+
+.emerald {
+    background-color: #2b9969;
+    color: #fff;
+}
+
+.firered {
+    background-color: #ca5719;
+    color: #fff;
+}
+
+.leafgreen {
+    background-color: #2ec747;
+    color: #fff;
+}
+
+.diamond {
+    background-color: #35413c;
+    color: #fff;
+}
+
+.pearl {
+    background-color: #56187b;
+    color: #fff;
+}
+
+.platinum {
+    background-color: #8ad3c0;
+    color: #fff;
+}
+
+.heartgold {
+    background-color: #d8bb37;
+    color: #fff;
+}
+
+.soulsilver {
+    background-color: #999999;
+    color: #fff;
+}
+
+.black {
+    background-color: black;
+    color: #fff;
+}
+
+.white {
+    background-color: white;
+    color: black;
+}
+
+.colosseum {
+    background-color: #bf2587;
+    color: #fff;
+}
+
+.xd {
+    background-color: darkslateblue;
+    color: #fff;
+}
+
+.black-2 {
+    background-color: black;
+    color: #fff;
+}
+
+.white-2 {
+    background-color: white;
+    color: black;
+}
+
+.x {
+    background-color: darkcyan;
+    color: #fff;
+}
+
+.y {
+    background-color: firebrick;
+    color: #fff;
+}
+
+.omega-ruby {
+    background-color: rgb(204, 50, 50);
+    color: #fff;
+}
+
+.alpha-sapphire {
+    background-color: dodgerblue;
+    color: #fff;
+}
+
+.sun {
+    background-color: rgb(220, 209, 54);
+    color: #fff;
+}
+
+.moon {
+    background-color: #456f83;
+    color: #fff;
+}
+
+.ultra-sun {
+    background-color: #c7bd2e;
+    color: #fff;
+}
+
+.ultra-moon {
+    background-color: rgb(151, 151, 151);
+    color: #fff;
+}
+
+.lets-go-pikachu {
+    background-color: #2b9969;
+    color: #fff;
+}
+
+.lets-go-eevee {
+    background-color: #523419;
+    color: #fff;
+}
+
+.sword {
+    background-color: #3f3f3f;
+    color: #fff;
+}
+
+.shield {
+    color: #fff;
+    background-color: #c7bd2e;
+}
