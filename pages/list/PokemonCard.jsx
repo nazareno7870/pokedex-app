@@ -8,7 +8,7 @@ const PokemonCard = ({ name, id, data }) => {
     const pokeRef = useRef()
     const [isVisible, setisVisible] = useState(false);
     const pokemon = useGetPokemonData({ id })
-    const imgurl = !!pokemon?.sprites?.other?.dream_world.front_default ? pokemon?.sprites?.other.dream_world.front_default : pokemon?.sprites?.other['official-artwork'].front_default
+    const imgurl = id <= 649 ? pokemon?.sprites?.other.dream_world.front_default : pokemon?.sprites?.other['official-artwork'].front_default
     const [showRight, setshowRight] = useState(false);
     const [showLeft, setshowLeft] = useState(false);
     const [positionCard, setpositionCard] = useState('0px');
@@ -39,7 +39,7 @@ const PokemonCard = ({ name, id, data }) => {
     const returnLeft = () => {
         setpositionCard('0px')
         setTimeout(() => {
-        setshowRight(false)
+            setshowRight(false)
         }, 700);
     }
 
@@ -51,7 +51,7 @@ const PokemonCard = ({ name, id, data }) => {
     const returnRight = () => {
         setpositionCard('0px')
         setTimeout(() => {
-        setshowLeft(false)
+            setshowLeft(false)
         }, 800);
     }
 
@@ -142,7 +142,19 @@ const PokemonCard = ({ name, id, data }) => {
                 </div>}
 
 
-            <div onTouchEnd={handleSlide} onTouchStart={e => settouchStart(e.touches[0].clientX)} ref={pokeRef} className={styles.pokemonCard} style={{ left: positionCard, backgroundImage: !!pokemon?.types ? `url('/bg-${pokemon?.types[0].type?.name}.png')` : "url('/bg.png')" }}>
+            <div onTouchEnd={handleSlide} onTouchStart={e => settouchStart(e.touches[0].clientX)} ref={pokeRef} className={styles.pokemonCard} style={{ left: positionCard }}>
+                <div className={styles.bgimage}>
+                    {   !!pokemon?.types &&
+                        <Image
+                            src={`/bg-${pokemon?.types[0].type?.name}-min.png`}
+                            alt={pokemon?.types[0].type?.name}
+                            width={350}
+                            height={159}
+                            layout="responsive"
+                        />
+                    }
+
+                </div>
                 <div className={styles.pokemonid}>
                     <h4 className={styles.pokemon_id_h4}>{pokemon?.id}</h4>
                 </div>

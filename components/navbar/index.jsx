@@ -6,7 +6,7 @@ const Navbar = () => {
     return (
         <nav className={styles.navbar}>
             <Link href="/">
-            <a><Image src='/pokeball.svg' alt="Pokeball Icon" width={32} height={32}/></a>
+            <a><Image className={styles.pokeball} src='/pokeball.svg' alt="Pokeball Icon" width={32} height={32}/></a>
             </Link>
         </nav>
     );
