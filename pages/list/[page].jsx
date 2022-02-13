@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import PokemonCard from './PokemonCard';
 import { useRouter } from 'next/router'
 import useGetGraphql from './../../services/useGetGraphql';
+import styles from './styles.module.css'
 
 const PokemonList = () => {
     const router = useRouter()
@@ -22,35 +23,30 @@ const PokemonList = () => {
     }, [])
 
     return (
-        <>
+        <>  <div className={styles.pokedexcontainer}>
+            {pokemons?.map(pok => {
+                return (<PokemonCard
+                    name={pok.name}
+                    id={pok.id}
+                    key={pok.name}
+                    data={pok} />)
+            })}
+            </div>
             {
                 !!page
-                    ? <>
+                    ?
 
-                        {pokemons?.map(pok => {
-                            return (<PokemonCard
-                                name={pok.name}
-                                id={pok.id}
-                                key={pok.name}
-                                data={pok} />)
-                        })}
 
-                        <Pagination onChange={handlePage} loop color="secondary" total={pages} initialPage={parseInt(pagination)} />
 
-                    </>
-                    : <>
+                    <Pagination onChange={handlePage} loop color="secondary" total={pages} initialPage={parseInt(pagination)} />
 
-                        {pokemons?.map(pok => {
-                            return (<PokemonCard
-                                name={pok.name}
-                                id={pok.id}
-                                key={pok.name}
-                                data={pok} />)
-                        })}
 
-                        <Pagination className='pagination' onChange={handlePage} loop color="secondary" total={pages} initialPage={1} />
+                    :
 
-                    </>}
+
+                    <Pagination className='pagination' onChange={handlePage} loop color="secondary" total={pages} initialPage={1} />
+
+            }
 
         </>
 

@@ -24,7 +24,15 @@
     margin-top: 80px;
     position: relative;
     border-radius: 10px;
+    max-width: 330px;
     box-shadow: 1px 1px 5px black;
+}
+
+.pokedexcontainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
 }
 
 .type {
@@ -210,4 +218,14 @@
     width: 100%;
     height: 100%;
     position: relative;
+}
+
+@media (min-width: 760px) {
+    .pokedexcontainer {
+        display: grid;
+        grid-template-columns: 330px 330px;
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+    }
 }
