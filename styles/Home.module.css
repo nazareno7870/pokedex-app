@@ -24,6 +24,7 @@
     align-items: center;
     justify-content: center;
     filter: drop-shadow(2px 4px 1px black);
+    margin-top: 20px;
 }
 
 .title {

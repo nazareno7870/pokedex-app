@@ -135,16 +135,19 @@
     right: 0;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     cursor: pointer;
     filter: drop-shadow(1px 1px 0px #000000d3);
     z-index: 20;
+    box-shadow: inset 3px 0px 6px #00000025, -6px 0px 10px #00000024;
+    border-radius: 0 10px 10px 0;
+    width: 38px;
 }
 
 .games {
     position: absolute;
-    left: 30px;
+    left: 45px;
     width: 70%;
     margin: auto;
     display: flex;
@@ -172,7 +175,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 8px;
-    width: 100%;
+    width: 90%;
     justify-content: center;
     align-items: center;
 }
@@ -193,11 +196,14 @@
     left: 0;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     cursor: pointer;
     filter: drop-shadow(1px 1px 0px #000000d3);
     z-index: 20;
+    box-shadow: inset -3px 0px 6px #00000025, 6px 0px 10px #00000024;
+    border-radius: 10px 0 0 10px;
+    width: 38px;
 }
 
 .bgimage {
