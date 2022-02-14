@@ -13,6 +13,7 @@ const PokemonList = () => {
     const [pokemons, loading] = useGetGraphql({ page: page, limit: limit })
     const [pagination, setpagination] = useState(page);
     const pages = 45
+    
     const handlePage = (page) => {
         router.push(`/list/${page}`)
         window.scrollTo(0, 0)
