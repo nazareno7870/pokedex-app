@@ -4,12 +4,13 @@ import PokemonCard from './PokemonCard';
 import { useRouter } from 'next/router'
 import useGetGraphql from './../../services/useGetGraphql';
 import styles from './styles.module.css'
+import Spinner from '../../components/Spinner/Spinner';
 
 const PokemonList = () => {
     const router = useRouter()
     const { page } = router.query
     const limit = 20
-    const pokemons = useGetGraphql({ page: page, limit: limit })
+    const [pokemons, loading] = useGetGraphql({ page: page, limit: limit })
     const [pagination, setpagination] = useState(page);
     const pages = 45
     const handlePage = (page) => {
@@ -23,15 +24,19 @@ const PokemonList = () => {
     }, [])
 
     return (
-        <>  <div className={styles.pokedexcontainer}>
-            {pokemons?.map(pok => {
-                return (<PokemonCard
-                    name={pok.name}
-                    id={pok.id}
-                    key={pok.id}
-                    data={pok} />)
-            })}
-            </div>
+        <> {
+            loading
+                ? <Spinner />
+                : <div className={styles.pokedexcontainer}>
+                    {pokemons?.map(pok => {
+                        return (<PokemonCard
+                            name={pok.name}
+                            id={pok.id}
+                            key={pok.id}
+                            data={pok} />)
+                    })}
+                </div>
+        }
             {
                 !!page
                     ?

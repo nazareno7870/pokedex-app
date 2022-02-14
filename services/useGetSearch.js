@@ -37,7 +37,7 @@ const useGetSearch = ({ search }) => {
 
     }, [loading, data])
 
-    return (pokemons);
+    return ([pokemons,loading]);
 }
 
 export default useGetSearch;

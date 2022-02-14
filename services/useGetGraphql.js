@@ -38,7 +38,7 @@ const useGetGraphql = ({ page, limit }) => {
 
     }, [loading, data])
 
-    return (pokemons);
+    return ([pokemons,loading]);
 }
 
 export default useGetGraphql;

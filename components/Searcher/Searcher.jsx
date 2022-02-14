@@ -25,6 +25,7 @@ const Searcher = () => {
                 onChange={e=>setsearch(e.target.value)}
                 onKeyPress={handleSearch}
                 value={search}
+                aria-label={true}
             />
         </div>
     );
