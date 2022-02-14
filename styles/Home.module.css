@@ -7,8 +7,15 @@
     align-items: center;
     overflow: hidden;
     gap: 30px;
+    padding-bottom: 30px;
 }
-
+.searcher{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
 .main {
     min-height: 100vh;
     padding: 1rem 0;

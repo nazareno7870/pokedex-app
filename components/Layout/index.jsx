@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Navbar from '../navbar/index'
 import styles from '../../styles/Home.module.css'
+import Searcher from '../Searcher/Searcher'
 
 export default function Layout({ children }) {
     return (
@@ -14,10 +15,14 @@ export default function Layout({ children }) {
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin></link>
                 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet"></link>
             </Head>
+
             <div className={styles.topTitle}>
                 <Image src='/pokedex.svg' alt='Pokedex Icon' width={64} height={64} />
                 <h1 className={styles.title}>Pokedex</h1>
             </div>
+
+            <Searcher/>
+
             <div className={styles.container}>{children}</div>
             <Navbar />
 

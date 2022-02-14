@@ -28,7 +28,7 @@ const PokemonList = () => {
                 return (<PokemonCard
                     name={pok.name}
                     id={pok.id}
-                    key={pok.name}
+                    key={pok.id}
                     data={pok} />)
             })}
             </div>
