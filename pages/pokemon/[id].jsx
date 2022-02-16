@@ -39,7 +39,7 @@ const Pokemon = () => {
                         {pokemon.game_indices.map(m => {
 
                             return (<p
-                                className={`${styles.btn} ${m.version.name}`}
+                                className={`${styles.btn} ${m.version.name} ${filterGame===m.version.name && styles.btnActive}`}
                                 key={m.version.name}
                                 onClick={e => setfilterGame(e.target.innerHTML)}
                             >{m.version.name}</p>)

@@ -7,12 +7,12 @@ import Spinner from './../../components/Spinner/Spinner';
 const PokemonList = () => {
     const router = useRouter()
     const { search } = router.query
-    const { pokemons, loading } = useGetSearch({ search: search })
+    const [ pokemons, loading] = useGetSearch({ search: search })
 
 
     return (
         <>
-            {true
+            {loading
                 ? <Spinner/>
     : <div className={styles.pokedexcontainer}>
                     {pokemons?.map(pok => {

@@ -7,13 +7,13 @@ import styles from './styles.module.css'
 const PokemonCard = ({ name, id, data }) => {
     const pokeRef = useRef()
     const [isVisible, setisVisible] = useState(false);
-    const pokemon = useGetPokemonData({ id })
+    const [pokemon,loading] = useGetPokemonData({ id })
     const imgurl = id <= 649 ? pokemon?.sprites?.other.dream_world.front_default : pokemon?.sprites?.other['official-artwork'].front_default
     const [showRight, setshowRight] = useState(false);
     const [showLeft, setshowLeft] = useState(false);
     const [positionCard, setpositionCard] = useState('0px');
     const [touchStart, settouchStart] = useState(0);
-
+    console.log(pokemon)
     const handleObserv = e => {
         if (e[0].isIntersecting) {
             setisVisible(true)
