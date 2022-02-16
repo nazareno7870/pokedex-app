@@ -46,12 +46,36 @@ const Pokemon = () => {
                         height={220}
                     />
 
+
                     <h3 className={styles.selectGame}>Type</h3>
                     <div className={styles.types}>
                         {pokemon?.types?.map(typ => {
                             return (<Button key={typ.type.name} Type={typ.type.name} />)
                         })}
                     </div>
+
+                    <div className={styles.statsSingle} >
+                        <h3 className={styles.selectGame}>Base States</h3>
+                            {pokemon?.stats?.map(s => {
+                                return (
+                                    <div key={s.stat.name} className={styles.linestatSingle}>
+
+                                        <Image
+                                            src={`/stats/${s.stat.name}.png`}
+                                            alt={s.stat.name}
+                                            width={28}
+                                            height={28}
+                                        />
+
+                                        <p className={styles.statSingle} >
+                                            {s.stat.name}: {s.base_stat}
+                                        </p>
+
+                                    </div>
+                                )
+                            })}
+                    </div>
+
                     <h3 className={styles.selectGame}>Select Game</h3>
                     <div className={styles.listgames}>
 

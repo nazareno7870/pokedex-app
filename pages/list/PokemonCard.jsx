@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import useGetPokemonData from '../../services/useGetPokemonData';
 import styles from './styles.module.css'
-import Link from 'next/link'
 import ButtonShowInfo from '../../components/ButtonType/ButtonShowInfo';
 
 const PokemonCard = ({ name, id, data }) => {

@@ -21,6 +21,7 @@ const Navbar = () => {
                 <Image onClick={handleMenu} className={`${styles.pokeball} ${activePokeball ? styles.active : ''}`} src='/pokeball.svg' alt="Pokeball Icon" width={32} height={32} />
                 <ul className={styles.linksMenu}>
                     <li><Link href='/'><a>Pokedex</a></Link></li>
+                    <li><Link href='/types'><a>Types</a></Link></li>
                 </ul>
             </nav>
         </>

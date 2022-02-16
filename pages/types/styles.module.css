@@ -1,0 +1,19 @@
+.typesTitle{
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+.types{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+}
+.types a{
+    text-align: center;
+    padding: 8px 40px;
+    margin-left: 0px;
+}
