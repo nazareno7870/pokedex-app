@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
-import Button from '../../components/ButtonType/Button';
 import useGetPokemonData from '../../services/useGetPokemonData';
 import styles from './styles.module.css'
+import Link from 'next/link'
+import ButtonShowInfo from '../../components/ButtonType/ButtonShowInfo';
 
 const PokemonCard = ({ name, id, data }) => {
     const pokeRef = useRef()
@@ -13,7 +14,7 @@ const PokemonCard = ({ name, id, data }) => {
     const [showLeft, setshowLeft] = useState(false);
     const [positionCard, setpositionCard] = useState('0px');
     const [touchStart, settouchStart] = useState(0);
-    console.log(pokemon)
+
     const handleObserv = e => {
         if (e[0].isIntersecting) {
             setisVisible(true)
@@ -177,13 +178,8 @@ const PokemonCard = ({ name, id, data }) => {
                 <div className={styles.type}>
                     <h3 className={styles.name}>{name}</h3>
                     <div className={styles.buttons}>
-                        {!!pokemon?.types
-                            ? pokemon.types.map(typ => {
 
-                                return (<Button key={typ.type.name} Type={typ.type.name} />)
-                            })
-                            : <></>
-                        }
+                        {pokemon?.types && <ButtonShowInfo id={id} Text={'Show Info'} Type={pokemon?.types[0].type?.name}/>}
 
                     </div>
 

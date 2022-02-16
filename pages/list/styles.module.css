@@ -33,8 +33,51 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
+    margin-bottom: 40px;
 }
-
+.moves{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.move {
+    margin: 0;
+    text-transform: capitalize;
+    width: 100%;
+    font-size: 16px;
+    padding: 4px 22px;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    margin-top: 10px;
+}
+.types{
+    display: flex;
+    gap:20px
+}
+.types button{
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
+    padding: 4px 30px;
+}
+.movelevel {
+    margin: 0;
+    text-transform: capitalize;
+    width: 100%;
+    padding: 4px 22px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    text-align: center;
+}
+.showInfo{
+    font-size: 12px;
+    color: white;
+    border-radius: 10px;
+    transition: .3s;
+    cursor: pointer;
+    margin-left: 10px;
+    font-family: 'Oswald', sans-serif;
+    padding: 4px 30px;
+    background-color: red;
+}
 .type {
     width: 100%;
     display: flex;
@@ -68,6 +111,36 @@
     color: #ad4296;
     margin-bottom: 10px;
     font-family: ui-monospace;
+}
+
+.pokemonName {
+    text-transform: uppercase;
+    font-size: 26px;
+    letter-spacing: 4px;
+}
+
+.parCard {
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 1px 1px 4px #0000004a;
+    font-family: 'Oswald', sans-serif;
+    text-transform: capitalize;
+    padding: 4px 20px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.encounters {
+    width: 100%;
+}
+
+.parlocation {
+    margin: 0;
+}
+
+.parmethod {
+    margin: 0;
+    font-size: 12px;
 }
 
 .buttons {
@@ -183,9 +256,17 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 8px;
-    width: 90%;
+    width: 100%;
     justify-content: center;
     align-items: center;
+    padding-bottom: 20px;
+}
+
+.selectGame {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #80808038;
+    padding-top: 20px;
 }
 
 .btn {
@@ -200,9 +281,16 @@
     cursor: pointer;
     transition: .5s;
 }
-.btnActive{
-    box-shadow: inset 2px 2px 1px #0000003b;
+
+.btnsingle {
+    padding: 8px 16px;
+    border-radius: 4px;
 }
+
+.btnActive {
+    box-shadow: inset 2px 2px 4px #000000b3;
+}
+
 .iconLeft {
     position: absolute;
     left: 0;
