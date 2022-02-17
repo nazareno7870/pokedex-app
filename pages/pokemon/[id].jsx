@@ -15,7 +15,7 @@ const Pokemon = () => {
     const [filterMoves, setfilterMoves] = useState([]);
     const [filterGame, setfilterGame] = useState('');
     const imgurl = id <= 649 ? pokemon?.sprites?.other.dream_world.front_default : pokemon?.sprites?.other['official-artwork'].front_default
-    console.log(pokemon)
+    const [showModal, setShowModal] = useState(false);
     useEffect(() => {
         const filter = encounters.filter(enc => enc.version_details.some(ver => ver.version.name === filterGame))
         setfilterEncounters(filter)
@@ -56,24 +56,24 @@ const Pokemon = () => {
 
                     <div className={styles.statsSingle} >
                         <h3 className={styles.selectGame}>Base States</h3>
-                            {pokemon?.stats?.map(s => {
-                                return (
-                                    <div key={s.stat.name} className={styles.linestatSingle}>
+                        {pokemon?.stats?.map(s => {
+                            return (
+                                <div key={s.stat.name} className={styles.linestatSingle}>
 
-                                        <Image
-                                            src={`/stats/${s.stat.name}.png`}
-                                            alt={s.stat.name}
-                                            width={28}
-                                            height={28}
-                                        />
+                                    <Image
+                                        src={`/stats/${s.stat.name}.png`}
+                                        alt={s.stat.name}
+                                        width={28}
+                                        height={28}
+                                    />
 
-                                        <p className={styles.statSingle} >
-                                            {s.stat.name}: {s.base_stat}
-                                        </p>
+                                    <p className={styles.statSingle} >
+                                        {s.stat.name}: {s.base_stat}
+                                    </p>
 
-                                    </div>
-                                )
-                            })}
+                                </div>
+                            )
+                        })}
                     </div>
 
                     <h3 className={styles.selectGame}>Select Game</h3>
@@ -106,7 +106,7 @@ const Pokemon = () => {
                                 </div>)
                             })}
                         </div>
-                        : <div className={styles.parCard}>
+                        : <div className={styles.parCard} onClick={() => setShowModal(true)}>
                             <p>Select Game</p>
                         </div>}
 
@@ -132,7 +132,7 @@ const Pokemon = () => {
                                 )
                             })
                             : filterGame === ''
-                                ? <div className={styles.parCard}>
+                                ? <div className={styles.parCard} onClick={() => setShowModal(true)}>
                                     <p>Select Game</p>
                                 </div>
                                 : <div className={styles.parCard}>
@@ -140,7 +140,22 @@ const Pokemon = () => {
                                 </div>
                         }
                     </div>
+                    <div className={styles.modalbg} style={{ opacity: showModal ? 1 : 0,visibility:showModal ? 'visible' : 'hidden' }}>
+                        <div style={{height: showModal ? '60vh' : '0vh'}} className={styles.modalCont}>
+                            {pokemon.game_indices.map(m => {
 
+                                return (<p
+                                    className={`${styles.btn} ${styles.btnsingle} ${m.version.name} ${filterGame === m.version.name && styles.btnActive}`}
+                                    key={m.version.name}
+                                    onClick={e => {setfilterGame(e.target.innerHTML);setShowModal(false)}}
+                                >{m.version.name}</p>)
+                            }
+
+                            )
+
+                            }
+                        </div>
+                    </div>
                 </>
             }
 

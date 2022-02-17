@@ -19,9 +19,7 @@ const Types = () => {
         "poison",
         "psychic",
         "rock",
-        "shadow",
         "steel",
-        "unknown",
         "water"
     ]
 

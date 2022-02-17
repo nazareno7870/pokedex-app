@@ -20,8 +20,8 @@ const Navbar = () => {
             <nav className={styles.navbar} style={{ bottom: showMenu ? '0px' : '-200px' }}>
                 <Image onClick={handleMenu} className={`${styles.pokeball} ${activePokeball ? styles.active : ''}`} src='/pokeball.svg' alt="Pokeball Icon" width={32} height={32} />
                 <ul className={styles.linksMenu}>
-                    <li><Link href='/'><a>Pokedex</a></Link></li>
-                    <li><Link href='/types'><a>Types</a></Link></li>
+                    <li><Link href='/'><a onClick={()=>setshowMenu(false)} >Pokedex</a></Link></li>
+                    <li><Link href='/types'><a onClick={()=>setshowMenu(false)}>Types</a></Link></li>
                 </ul>
             </nav>
         </>

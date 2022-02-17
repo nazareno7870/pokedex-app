@@ -147,7 +147,12 @@
 .buttons {
     display: flex;
 }
-
+.buttons a{
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
 .imagePokemon {
     filter: drop-shadow(2px 2px 2px black);
     position: absolute;
@@ -342,6 +347,31 @@
     width: 100%;
     height: 100%;
     position: relative;
+}
+.modalbg{
+    width: 100%;
+    transition: .5s;
+    position: fixed;
+    top:0;
+    background-color: rgba(0, 0, 0, 0.487);
+    z-index: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.modalCont{
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    transition: .5s;
+}
+
+.modalCont p{
+    text-align: center;
 }
 
 @media (min-width: 760px) {
