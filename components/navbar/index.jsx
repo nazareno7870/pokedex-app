@@ -22,6 +22,7 @@ const Navbar = () => {
                 <ul className={styles.linksMenu}>
                     <li><Link href='/'><a onClick={()=>setshowMenu(false)} >Pokedex</a></Link></li>
                     <li><Link href='/types'><a onClick={()=>setshowMenu(false)}>Types</a></Link></li>
+                    <li><Link href='/effectiveness'><a onClick={()=>setshowMenu(false)}>Advantage / Disadvantage</a></Link></li>
                 </ul>
             </nav>
         </>

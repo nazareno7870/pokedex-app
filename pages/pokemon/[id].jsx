@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import styles from '../list/styles.module.css'
 import Image from 'next/image';
 import Button from '../../components/ButtonType/Button';
+import Head from 'next/head';
 
 const Pokemon = () => {
     const router = useRouter()
@@ -33,9 +34,19 @@ const Pokemon = () => {
         setfilterMoves(moves4)
     }, [encounters, filterGame, pokemon])
 
+    function capitalizeFirstLetter(string) {
+        if(string!== undefined){
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+      }
 
     return (
+
         <>
+            <Head>
+                <title>{capitalizeFirstLetter(pokemon?.name)} | Statistics | Data Pokemon</title>
+            </Head>
+
             {pokemon.name &&
                 <>
                     <h1 className={styles.pokemonName}>{pokemon.name}</h1>
@@ -140,14 +151,14 @@ const Pokemon = () => {
                                 </div>
                         }
                     </div>
-                    <div className={styles.modalbg} style={{ opacity: showModal ? 1 : 0,visibility:showModal ? 'visible' : 'hidden' }}>
-                        <div style={{height: showModal ? '60vh' : '0vh'}} className={styles.modalCont}>
+                    <div className={styles.modalbg} style={{ opacity: showModal ? 1 : 0, visibility: showModal ? 'visible' : 'hidden' }}>
+                        <div style={{ height: showModal ? '60vh' : '0vh' }} className={styles.modalCont}>
                             {pokemon.game_indices.map(m => {
 
                                 return (<p
                                     className={`${styles.btn} ${styles.btnsingle} ${m.version.name} ${filterGame === m.version.name && styles.btnActive}`}
                                     key={m.version.name}
-                                    onClick={e => {setfilterGame(e.target.innerHTML);setShowModal(false)}}
+                                    onClick={e => { setfilterGame(e.target.innerHTML); setShowModal(false) }}
                                 >{m.version.name}</p>)
                             }
 

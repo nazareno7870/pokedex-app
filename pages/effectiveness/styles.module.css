@@ -1,0 +1,67 @@
+.typesTitle{
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+    margin-top: 10px;
+}
+.typesTitle button{
+    font-size: 24px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    border-radius: 3px;
+    padding: 2px 48px;
+}
+
+.cardType{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0px 0px 40px 0px;
+    background-color: white;
+    box-shadow: 1px 1px 5px #00000094;
+    border-radius: 6px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.adv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.advh3{
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 4px;
+    margin-top: 50px;
+}
+
+.bgimage {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 6px 6px 0 0;
+}
+.bgimage img{
+    border-radius: 6px 6px 0 0;
+}
+.buttons button{
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    border-radius: 6px;
+    padding: 4px 26px;
+}
