@@ -110,11 +110,11 @@ const Effectiveness = () => {
 
 
     return (
-        <>
+        <div className={styles.container}>
             <Head>
                 <title>Effectiveness | Data Pokemon</title>
             </Head>
-            
+
             {types.map(type => {
                 return (
                     <div className={styles.cardType} key={type.type}>
@@ -154,7 +154,7 @@ const Effectiveness = () => {
                 )
             })}
 
-        </>
+        </div>
     );
 
 }

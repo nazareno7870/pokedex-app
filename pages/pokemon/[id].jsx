@@ -35,10 +35,10 @@ const Pokemon = () => {
     }, [encounters, filterGame, pokemon])
 
     function capitalizeFirstLetter(string) {
-        if(string!== undefined){
+        if (string !== undefined) {
             return string.charAt(0).toUpperCase() + string.slice(1);
         }
-      }
+    }
 
     return (
 
@@ -46,131 +46,143 @@ const Pokemon = () => {
             <Head>
                 <title>{capitalizeFirstLetter(pokemon?.name)} | Statistics | Data Pokemon</title>
             </Head>
+            <h1 className={styles.pokemonName}>{pokemon.name}</h1>
 
-            {pokemon.name &&
-                <>
-                    <h1 className={styles.pokemonName}>{pokemon.name}</h1>
-                    <Image
-                        src={imgurl}
-                        alt={pokemon.name}
-                        width={220}
-                        height={220}
-                    />
+            <div className={styles.pokemonContainer}>
+                {pokemon.name &&
+                    <>
 
-
-                    <h3 className={styles.selectGame}>Type</h3>
-                    <div className={styles.types}>
-                        {pokemon?.types?.map(typ => {
-                            return (<Button key={typ.type.name} Type={typ.type.name} />)
-                        })}
-                    </div>
-
-                    <div className={styles.statsSingle} >
-                        <h3 className={styles.selectGame}>Base States</h3>
-                        {pokemon?.stats?.map(s => {
-                            return (
-                                <div key={s.stat.name} className={styles.linestatSingle}>
-
-                                    <Image
-                                        src={`/stats/${s.stat.name}.png`}
-                                        alt={s.stat.name}
-                                        width={28}
-                                        height={28}
-                                    />
-
-                                    <p className={styles.statSingle} >
-                                        {s.stat.name}: {s.base_stat}
-                                    </p>
-
-                                </div>
-                            )
-                        })}
-                    </div>
-
-                    <h3 className={styles.selectGame}>Select Game</h3>
-                    <div className={styles.listgames}>
-
-
-                        {pokemon.game_indices.map(m => {
-
-                            return (<p
-                                className={`${styles.btn} ${styles.btnsingle} ${m.version.name} ${filterGame === m.version.name && styles.btnActive}`}
-                                key={m.version.name}
-                                onClick={e => setfilterGame(e.target.innerHTML)}
-                            >{m.version.name}</p>)
-                        }
-
-                        )
-
-                        }
-                    </div>
-
-                    <h3 className={styles.selectGame}>Moves</h3>
-
-                    {filterMoves?.length >= 1
-                        ? <div className={styles.moves}>
-                            {filterMoves?.map(mov => {
-                                return (<div key={mov.name}>
-                                    <h5 className={styles.move} >
-                                        {mov.name.replaceAll('-', ' ')}</h5>
-                                    <p className={styles.movelevel}>Level: {mov.level}</p>
-                                </div>)
-                            })}
+                        <div className={styles.info}>
+                            <div className={styles.avatar}>
+                                <Image
+                                    src={imgurl}
+                                    alt={pokemon.name}
+                                    width={220}
+                                    height={220}
+                                />
+                            </div>
                         </div>
-                        : <div className={styles.parCard} onClick={() => setShowModal(true)}>
-                            <p>Select Game</p>
-                        </div>}
-
-
-                    <h3 className={styles.selectGame}>Locations</h3>
-
-                    <div className={styles.encounters}>
-                        {filterEncounters.length >= 1
-                            ? filterEncounters.map(enc => {
+                        <div className={styles.typePokemon}>
+                            <h3 className={styles.selectGame}>Type</h3>
+                            <div className={styles.types}>
+                                {pokemon?.types?.map(typ => {
+                                    return (<Button key={typ.type.name} Type={typ.type.name} />)
+                                })}
+                            </div>
+                        </div>
+                        <div className={styles.statsSingle} >
+                            <h3 className={styles.selectGame}>Base States</h3>
+                            {pokemon?.stats?.map(s => {
                                 return (
-                                    <div key={enc.location_area.name} className={styles.parCard}>
-                                        <h5 className={styles.parlocation}>
-                                            <Image
-                                                src={`/location.png`}
-                                                alt={'Stats Icon'}
-                                                width={16}
-                                                height={16}
-                                            />
-                                            {' ' + enc.location_area.name.replaceAll('-', ' ')}
-                                        </h5>
-                                        <p className={styles.parmethod}>Method: {enc.version_details[0].encounter_details[0].method.name}</p>
+                                    <div key={s.stat.name} className={styles.linestatSingle}>
+
+                                        <Image
+                                            src={`/stats/${s.stat.name}.png`}
+                                            alt={s.stat.name}
+                                            width={28}
+                                            height={28}
+                                        />
+
+                                        <p className={styles.statSingle} >
+                                            {s.stat.name}: {s.base_stat}
+                                        </p>
+
                                     </div>
                                 )
-                            })
-                            : filterGame === ''
-                                ? <div className={styles.parCard} onClick={() => setShowModal(true)}>
-                                    <p>Select Game</p>
-                                </div>
-                                : <div className={styles.parCard}>
-                                    <p>There is no location to find it</p>
-                                </div>
-                        }
-                    </div>
-                    <div className={styles.modalbg} style={{ opacity: showModal ? 1 : 0, visibility: showModal ? 'visible' : 'hidden' }}>
-                        <div style={{ height: showModal ? '60vh' : '0vh' }} className={styles.modalCont}>
-                            {pokemon.game_indices.map(m => {
-
-                                return (<p
-                                    className={`${styles.btn} ${styles.btnsingle} ${m.version.name} ${filterGame === m.version.name && styles.btnActive}`}
-                                    key={m.version.name}
-                                    onClick={e => { setfilterGame(e.target.innerHTML); setShowModal(false) }}
-                                >{m.version.name}</p>)
-                            }
-
-                            )
-
-                            }
+                            })}
                         </div>
-                    </div>
-                </>
-            }
+
+                        <div className={styles.selectGamePokemon}>
+                            <h3 className={styles.selectGame}>Select Game</h3>
+                            <div className={styles.listgames}>
 
 
+                                {pokemon.game_indices.map(m => {
+
+                                    return (<p
+                                        className={`${styles.btn} ${styles.btnsingle} ${m.version.name} ${filterGame === m.version.name && styles.btnActive}`}
+                                        key={m.version.name}
+                                        onClick={e => setfilterGame(e.target.innerHTML)}
+                                    >{m.version.name}</p>)
+                                }
+
+                                )
+
+                                }
+                            </div>
+                        </div>
+
+                        <div className={styles.movesPokemon}>
+                            <h3 className={styles.selectGame}>Moves</h3>
+
+                            {filterMoves?.length >= 1
+                                ? <div className={styles.moves}>
+                                    {filterMoves?.map(mov => {
+                                        return (<div key={mov.name}>
+                                            <h5 className={styles.move} >
+                                                {mov.name.replaceAll('-', ' ')}</h5>
+                                            <p className={styles.movelevel}>Level: {mov.level}</p>
+                                        </div>)
+                                    })}
+                                </div>
+                                : <div className={styles.parCard} onClick={() => setShowModal(true)}>
+                                    <p style={{cursor:'pointer'}}>Select Game</p>
+                                </div>}
+                        </div>
+
+                        <div className={styles.locationsPokemon}>
+                            <h3 className={styles.selectGame}>Locations</h3>
+
+                            <div className={styles.encounters}>
+                                {filterEncounters.length >= 1
+                                    ? filterEncounters.map(enc => {
+                                        return (
+                                            <div key={enc.location_area.name} className={styles.parCard}>
+                                                <h5 className={styles.parlocation}>
+                                                    <Image
+                                                        src={`/location.png`}
+                                                        alt={'Stats Icon'}
+                                                        width={16}
+                                                        height={16}
+                                                    />
+                                                    {' ' + enc.location_area.name.replaceAll('-', ' ')}
+                                                </h5>
+                                                <p className={styles.parmethod}>Method: {enc.version_details[0].encounter_details[0].method.name}</p>
+                                            </div>
+                                        )
+                                    })
+                                    : filterGame === ''
+                                        ? <div className={styles.parCard} onClick={() => setShowModal(true)}>
+                                            <p style={{cursor:'pointer'}}>Select Game</p>
+                                        </div>
+                                        : <div className={styles.parCard}>
+                                            <p>There is no location to find it</p>
+                                        </div>
+                                }
+                            </div>
+                        </div>
+
+
+                        <div className={styles.modalbg} style={{ opacity: showModal ? 1 : 0, visibility: showModal ? 'visible' : 'hidden' }}>
+                            <div className={styles.modalCont}>
+                                {pokemon.game_indices.map(m => {
+
+                                    return (<p
+                                        className={`${styles.btn} ${styles.btnsingle} ${m.version.name} ${filterGame === m.version.name && styles.btnActive}`}
+                                        key={m.version.name}
+                                        onClick={e => { setfilterGame(e.target.innerHTML); setShowModal(false) }}
+                                    >{m.version.name}</p>)
+                                }
+
+                                )
+
+                                }
+                            </div>
+                        </div>
+                    </>
+                }
+
+            </div>
         </>
     );
 }

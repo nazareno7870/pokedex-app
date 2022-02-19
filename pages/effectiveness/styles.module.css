@@ -65,3 +65,14 @@
     border-radius: 6px;
     padding: 4px 26px;
 }
+@media (min-width: 760px) {
+    .container{
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+        justify-content: center;
+        gap: 60px;
+        padding: 10px 80px;
+    }
+   
+}

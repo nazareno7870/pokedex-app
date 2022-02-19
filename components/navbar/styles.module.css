@@ -71,3 +71,9 @@
         transform: rotate(360deg);
     }
 }
+@media (min-width: 765px) {
+    .navbar{
+        display: none;
+    }
+   
+}

@@ -17,3 +17,16 @@
     padding: 8px 40px;
     margin-left: 0px;
 }
+@media (min-width: 950px) {
+    .types{
+        width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+        padding: 0 40px;
+    }
+    .types a{
+        padding: 8px 80px;
+        font-size: 16px;
+    }
+    
+}

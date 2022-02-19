@@ -35,10 +35,12 @@
     align-items: center;
     margin-bottom: 40px;
 }
-.moves{
+
+.moves {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
 .move {
     margin: 0;
     text-transform: capitalize;
@@ -49,15 +51,18 @@
     text-align: center;
     margin-top: 10px;
 }
-.types{
+
+.types {
     display: flex;
-    gap:20px
+    gap: 20px
 }
-.types button{
+
+.types button {
     font-size: 16px;
     font-family: 'Oswald', sans-serif;
     padding: 4px 30px;
 }
+
 .movelevel {
     margin: 0;
     text-transform: capitalize;
@@ -67,7 +72,8 @@
     font-size: 12px;
     text-align: center;
 }
-.showInfo{
+
+.showInfo {
     font-size: 12px;
     color: white;
     border-radius: 10px;
@@ -78,6 +84,7 @@
     padding: 4px 30px;
     background-color: red;
 }
+
 .type {
     width: 100%;
     display: flex;
@@ -147,12 +154,14 @@
 .buttons {
     display: flex;
 }
-.buttons a{
+
+.buttons a {
     font-size: 16px;
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 3px;
 }
+
 .imagePokemon {
     filter: drop-shadow(2px 2px 2px black);
     position: absolute;
@@ -198,7 +207,7 @@
     gap: 10px;
 }
 
-.statsSingle{
+.statsSingle {
     width: 100%;
     margin: auto;
     display: flex;
@@ -208,9 +217,9 @@
     font-size: 18px;
     font-family: 'Oswald', sans-serif;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     justify-content: center;
-    gap: 10px;   
+    gap: 10px;
 }
 
 .stat {
@@ -219,7 +228,7 @@
     color: #fff;
 }
 
-.statSingle{
+.statSingle {
     margin: 0;
     text-transform: capitalize;
 }
@@ -232,7 +241,7 @@
     filter: drop-shadow(1px 1px 0px #000000d3);
 }
 
-.linestatSingle{
+.linestatSingle {
     display: flex;
     gap: 10px;
     justify-content: center;
@@ -348,11 +357,12 @@
     height: 100%;
     position: relative;
 }
-.modalbg{
+
+.modalbg {
     width: 100%;
     transition: .5s;
     position: fixed;
-    top:0;
+    top: 0;
     background-color: rgba(0, 0, 0, 0.487);
     z-index: 500;
     display: flex;
@@ -360,21 +370,54 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    left: 0;
 }
 
-.modalCont{
+.avatar {
+    height: 220px;
+}
+
+.modalCont {
     width: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     transition: .5s;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
 }
 
-.modalCont p{
+.modalCont p {
     text-align: center;
 }
 
+.info, .typePokemon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 @media (min-width: 760px) {
+    .pokedexcontainer {
+        display: grid;
+        grid-template-columns: 330px;
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .pokemonContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (min-width: 950px) {
     .pokedexcontainer {
         display: grid;
         grid-template-columns: 330px 330px;
@@ -382,4 +425,60 @@
         align-items: center;
         justify-content: space-around;
     }
+
+    .pokemonContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .selectGame {
+        border-top: none;
+    }
+
+    .selectGamePokemon {
+        width: 80%;
+        margin: auto;
+        grid-column: 1/3;
+        border-top: 1px solid #80808038;
+        border-bottom: 1px solid #80808038;
+        padding: 20px;
+
+    }
+
+    .typePokemon {
+        grid-column: 1/3;
+        grid-row: 2/3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid #80808038;
+        padding: 20px;
+
+    }
+    .statsSingle{
+        border-left: 1px solid #80808038;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .pokemonName{
+        width: 100%;
+        border-bottom: 1px solid #80808038;
+        text-align: center;
+        padding-bottom: 20px;
+        font-size: 30px;
+        letter-spacing: 6px;
+    }
+    .selectGame{
+        padding: 0;
+        margin: 0;
+    }
+    .types,.moves,.encounters,.listgames,.parCard{
+        margin-top: 20px;
+    }
+    
 }
