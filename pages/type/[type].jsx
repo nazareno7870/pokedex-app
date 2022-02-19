@@ -34,7 +34,7 @@ const Type = () => {
     return (
         <>
             <Head>
-                <title>{capitalizeFirstLetter(type)} Pokemons | Data Pokemon</title>
+                <title>{capitalizeFirstLetter(type)} Pokemons - Page {!!page ? page : 1} | Data Pokemon</title>
             </Head>
 
             {
