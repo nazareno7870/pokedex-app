@@ -277,7 +277,6 @@
     display: flex;
     height: 100%;
     padding: 10px 0;
-    font-weight: 600;
     font-size: 16px;
     flex-direction: column;
     font-family: ui-sans-serif;
@@ -423,7 +422,7 @@
         grid-template-columns: 330px 330px;
         width: 100%;
         align-items: center;
-        justify-content: space-around;
+        gap: 60px;
     }
 
     .pokemonContainer {
