@@ -222,7 +222,7 @@ return `
 
 </urlset>`;
 
-        fs.writeFileSync("./sitemap.xml", sitemap);
+        fs.writeFileSync("./public/sitemap.xml", sitemap);
         console.log("genarated Sitemap successfully");
         res.json('genarated Sitemap successfully')
         return;
