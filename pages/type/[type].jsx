@@ -42,11 +42,15 @@ const Type = () => {
                     ? <Spinner />
                     : <div className={styles.pokedexcontainer}>
                         {pokemons?.map(pok => {
-                            return (<PokemonCard
-                                name={pok.pokemon_v2_pokemon.name}
-                                id={pok.pokemon_v2_pokemon.id}
-                                key={pok.pokemon_v2_pokemon.id}
-                                data={pok.pokemon_v2_pokemon} />)
+
+                                return (
+                                    <PokemonCard
+                                        name={pok.pokemon_v2_pokemon.name}
+                                        id={pok.pokemon_v2_pokemon.id}
+                                        key={pok.pokemon_v2_pokemon.id}
+                                        data={pok.pokemon_v2_pokemon} />)
+
+
                         })}
                     </div>
             }
@@ -56,13 +60,13 @@ const Type = () => {
 
 
 
-                    <Pagination onChange={handlePage} loop color="secondary" total={total / 20} initialPage={parseInt(pagination)} />
+                    <Pagination onChange={handlePage} loop color="secondary" total={parseInt(total / 20)} initialPage={parseInt(pagination)} />
 
 
                     :
 
 
-                    <Pagination className='pagination' onChange={handlePage} loop color="secondary" total={total / 20} initialPage={1} />
+                    <Pagination className='pagination' onChange={handlePage} loop color="secondary" total={parseInt(total / 20)} initialPage={1} />
 
             }
 

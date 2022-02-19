@@ -13,7 +13,7 @@ const PokemonList = () => {
     const limit = 20
     const [pokemons, loading] = useGetGraphql({ page: page, limit: limit })
     const [pagination, setpagination] = useState(page);
-    const pages = 45
+    const pages = 56
 
     const handlePage = (page) => {
         router.push(`/list/${page}`)

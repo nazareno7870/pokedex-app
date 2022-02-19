@@ -21,15 +21,13 @@ const PokemonList = () => {
                 ? <Spinner />
                 : <div className={styles.pokedexcontainer}>
                     {pokemons?.map(pok => {
-                        if (pok.id <= 10002) {
+
                             return (<PokemonCard
                                 name={pok.name}
                                 id={pok.id}
                                 key={pok.name}
                                 data={pok} />)
-                        } else {
-                            return (<></>)
-                        }
+
 
                     })}
                 </div>
