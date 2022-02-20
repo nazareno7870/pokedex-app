@@ -4,8 +4,8 @@ import useGetPokemonEncounters from '../../services/useGetPokemonEncounters'
 import { useEffect, useState } from 'react';
 import styles from '../list/styles.module.css'
 import Image from 'next/image';
-import Button from '../../components/ButtonType/Button';
 import Head from 'next/head';
+import ButtonTypes from './../../components/ButtonType/ButtonTypes';
 
 const Pokemon = () => {
     const router = useRouter()
@@ -66,7 +66,7 @@ const Pokemon = () => {
                             <h3 className={styles.selectGame}>Type</h3>
                             <div className={styles.types}>
                                 {pokemon?.types?.map(typ => {
-                                    return (<Button key={typ.type.name} Type={typ.type.name} />)
+                                    return (<ButtonTypes key={typ.type.name} Type={typ.type.name} />)
                                 })}
                             </div>
                         </div>

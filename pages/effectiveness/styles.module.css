@@ -58,7 +58,7 @@
 .bgimage img{
     border-radius: 6px 6px 0 0;
 }
-.buttons button{
+.buttons a{
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     font-size: 14px;

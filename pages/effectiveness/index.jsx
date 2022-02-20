@@ -2,6 +2,7 @@ import styles from './styles.module.css'
 import Button from './../../components/ButtonType/Button';
 import Head from 'next/head';
 import Image from 'next/image';
+import ButtonTypes from '../../components/ButtonType/ButtonTypes';
 
 const Effectiveness = () => {
     const types = [
@@ -136,7 +137,7 @@ const Effectiveness = () => {
                             <h3 className={styles.advh3}>Advantage</h3>
                             <div className={styles.buttons}>
                                 {type.advantage.map(type => {
-                                    return (<Button key={type} Type={type} />)
+                                    return (<ButtonTypes key={type} Type={type} />)
                                 })}
                             </div>
                         </div>
@@ -145,7 +146,7 @@ const Effectiveness = () => {
                             <h3 className={styles.advh3}>Disadvantage</h3>
                             <div className={styles.buttons}>
                                 {type.disadvantage.map(type => {
-                                    return (<Button key={type} Type={type} />)
+                                    return (<ButtonTypes key={type} Type={type} />)
                                 })}
                             </div>
                         </div>
