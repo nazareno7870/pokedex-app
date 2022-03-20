@@ -17,6 +17,7 @@ const Pokemon = () => {
     const [filterGame, setfilterGame] = useState('');
     const imgurl = id <= 649 ? pokemon?.sprites?.other.dream_world.front_default : pokemon?.sprites?.other['official-artwork'].front_default
     const [showModal, setShowModal] = useState(false);
+    console.log(evolution)
     useEffect(() => {
         const filter = encounters.filter(enc => enc.version_details.some(ver => ver.version.name === filterGame))
         setfilterEncounters(filter)
